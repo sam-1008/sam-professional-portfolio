@@ -1,20 +1,38 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <h1 align="center">Sam Tañafranca - Professional Portfolio</h1>
+  <p align="center">
+    A premium, interactive personal portfolio showcasing my journey in full-stack web development, data analysis, and multimedia design.
+  </p>
 </div>
 
-# Run and deploy your AI Studio app
+## 🚀 About the Project
 
-This contains everything you need to run your app locally.
+This repository contains the source code for my personal professional portfolio. Built with a focus on modern web design principles, the portfolio features a responsive **Bento Grid** layout, subtle glassmorphic aesthetics, and smooth micro-animations. 
 
-View your app in AI Studio: https://ai.studio/apps/c7c6a2b3-cc4a-4c9f-a357-74f3f6545b91
+It highlights my expertise bridging the gap between logic and design—demonstrating my ability to build functional, engaging, and highly visual digital experiences.
 
-## Run Locally
+### ✨ Key Features
+- **Modern Aesthetic:** Premium UI with glassmorphism, refined typography, and dynamic hover states.
+- **Bento Grid Layout:** A meticulously structured layout for showcasing education, certifications, and badges.
+- **Project Gallery:** Detailed breakdown of my selected full-stack and front-end projects.
+- **Smooth Animations:** Integrated with Framer Motion for scroll-reveals and seamless page transitions.
 
-**Prerequisites:**  Node.js
+### 🛠️ Tech Stack
+- **Frontend:** React, TypeScript, Vite
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
 
+## 💻 Run Locally
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+To run this project on your local machine:
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
