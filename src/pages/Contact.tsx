@@ -21,7 +21,7 @@ export default function Contact() {
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    
+
     setIsSubmitting(true);
 
     const formData = new FormData(form);
@@ -49,7 +49,7 @@ export default function Contact() {
     } catch (error) {
       setToast({ show: true, type: 'error', message: error instanceof Error ? error.message : 'Network error occurred.' });
     }
-    
+
     setIsSubmitting(false);
   };
 
@@ -58,7 +58,7 @@ export default function Contact() {
       {/* Title Section */}
       <section className="pt-32 pb-20 bg-surface">
         <div className="max-w-[1200px] mx-auto px-8 text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             className="text-6xl md:text-7xl font-bold text-primary mb-6 font-sans tracking-tight"
@@ -75,9 +75,9 @@ export default function Contact() {
       <section className="py-24">
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            
+
             {/* Form */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="lg:col-span-7 bg-white p-12 md:p-16 shadow-[0_40px_80px_-20px_rgba(7,26,59,0.08)]"
@@ -85,8 +85,8 @@ export default function Contact() {
               <form onSubmit={onSubmit} className="space-y-10">
                 <div>
                   <label className="label-caps text-secondary block mb-3">NAME</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     name="name"
                     required
                     placeholder="John Doe"
@@ -95,8 +95,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="label-caps text-secondary block mb-3">EMAIL ADDRESS</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     name="email"
                     required
                     placeholder="john@example.com"
@@ -105,7 +105,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="label-caps text-secondary block mb-3">MESSAGE</label>
-                  <textarea 
+                  <textarea
                     rows={6}
                     name="message"
                     required
@@ -114,7 +114,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <button 
+                  <button
                     disabled={isSubmitting}
                     className="w-full bg-primary-container text-white label-caps py-6 tracking-[0.2em] hover:bg-primary transition-all active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed"
                   >
@@ -127,14 +127,14 @@ export default function Contact() {
             {/* Sidebar info */}
             <div className="lg:col-span-5 space-y-16">
               {/* Resume Card */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -5 }}
                 className="p-10 border border-outline-variant/30 bg-surface group hover:shadow-lg transition-all"
               >
                 <div className="flex justify-between items-start mb-8">
                   <div>
-                    <h3 className="text-2xl font-bold font-sans">Curriculum Vitae</h3>
-                    <p className="text-sm text-secondary font-serif mt-1">Updated June 2024 • PDF format</p>
+                    <h3 className="text-2xl font-bold font-sans">My Resume</h3>
+                    <p className="text-sm text-secondary font-serif mt-1">Updated April 2026 • PDF format</p>
                   </div>
                   <FileText className="text-primary-container group-hover:translate-y-1 transition-transform" size={36} />
                 </div>
@@ -145,9 +145,9 @@ export default function Contact() {
 
               {/* Image Deco */}
               <div className="aspect-[4/3] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-xl">
-                <img 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFvOQ5GX0dm_640ZrdPXfurUyF9duha_HXU64kRe4zu742DE8bkY2BV39cdNSGBOeW2eMHR9xXDMmCn4tAvJhYhKbmNhUZGmTtClNud6bu70QN_JQP0kcfuupEoaH9xvb2Eq2zhuidIK8nw92PnH68zrjLCW8M8fTQfxLKKU3PdW6k9nlhGWrrXLA978fEWYQqaaW7cWhxNChMWmxIRYNe4OjOv8fhwLVGfqoDxS4S1UqdTl_ADgVie0ZfTjb1PX5lhR-ZxCHUtnQ" 
-                  alt="Office" 
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFvOQ5GX0dm_640ZrdPXfurUyF9duha_HXU64kRe4zu742DE8bkY2BV39cdNSGBOeW2eMHR9xXDMmCn4tAvJhYhKbmNhUZGmTtClNud6bu70QN_JQP0kcfuupEoaH9xvb2Eq2zhuidIK8nw92PnH68zrjLCW8M8fTQfxLKKU3PdW6k9nlhGWrrXLA978fEWYQqaaW7cWhxNChMWmxIRYNe4OjOv8fhwLVGfqoDxS4S1UqdTl_ADgVie0ZfTjb1PX5lhR-ZxCHUtnQ"
+                  alt="Office"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -165,15 +165,14 @@ export default function Contact() {
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
-            className={`fixed bottom-8 right-8 z-50 flex items-center gap-4 px-6 py-4 rounded-xl shadow-2xl border backdrop-blur-md ${
-              toast.type === 'success' 
-                ? 'bg-green-50/90 border-green-200/50 text-green-800' 
+            className={`fixed bottom-8 right-8 z-50 flex items-center gap-4 px-6 py-4 rounded-xl shadow-2xl border backdrop-blur-md ${toast.type === 'success'
+                ? 'bg-green-50/90 border-green-200/50 text-green-800'
                 : 'bg-red-50/90 border-red-200/50 text-red-800'
-            }`}
+              }`}
           >
             {toast.type === 'success' ? <CheckCircle2 size={24} className="text-green-600" /> : <AlertCircle size={24} className="text-red-600" />}
             <p className="font-sans font-medium text-sm pr-4">{toast.message}</p>
-            <button 
+            <button
               onClick={() => setToast(prev => ({ ...prev, show: false }))}
               className={`p-1 rounded-full hover:bg-black/5 transition-colors ${toast.type === 'success' ? 'text-green-600' : 'text-red-600'}`}
             >
