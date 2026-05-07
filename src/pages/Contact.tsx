@@ -14,10 +14,12 @@ export default function Contact() {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
+    
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     formData.append("access_key", "3d8178f5-ee2a-40f5-84c3-4df802f782ba");
 
     const object = Object.fromEntries(formData);
@@ -35,7 +37,7 @@ export default function Contact() {
 
       if (res.success) {
         setSubmitStatus('success');
-        event.currentTarget.reset();
+        form.reset();
       } else {
         setSubmitStatus('error');
         setErrorMessage(res.message || 'Something went wrong. Please try again later.');
