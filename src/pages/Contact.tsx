@@ -10,6 +10,7 @@ import { motion } from 'motion/react';
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('Something went wrong. Please try again later.');
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -37,9 +38,11 @@ export default function Contact() {
         event.currentTarget.reset();
       } else {
         setSubmitStatus('error');
+        setErrorMessage(res.message || 'Something went wrong. Please try again later.');
       }
     } catch (error) {
       setSubmitStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Network error occurred.');
     }
     
     setIsSubmitting(false);
@@ -116,7 +119,7 @@ export default function Contact() {
                     <p className="text-green-600 text-sm mt-4 text-center font-bold">Message sent successfully! I will get back to you soon.</p>
                   )}
                   {submitStatus === 'error' && (
-                    <p className="text-red-500 text-sm mt-4 text-center font-bold">Something went wrong. Please try again later.</p>
+                    <p className="text-red-500 text-sm mt-4 text-center font-bold">{errorMessage}</p>
                   )}
                 </div>
               </form>
