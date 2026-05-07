@@ -9,8 +9,8 @@ import {
   ArrowRight, Code2, Palette, Box, Layers, GitBranch,
   FileCode2, Wind, Triangle, Hash, Server,
   ServerCog, FlaskConical, Zap, Flame, Database,
-  Leaf, Github, Terminal, Braces, Worm, Atom,
-  Coffee, DatabaseBackup
+  Leaf, Github, Terminal, Braces, Atom,
+  Coffee, Cpu, HardDrive
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
@@ -34,7 +34,7 @@ const SKILL_CATEGORIES = [
     skills: [
       { name: 'TYPESCRIPT', icon: <Braces size={28} /> },
       { name: 'JAVA', icon: <Coffee size={28} /> },
-      { name: 'PYTHON', icon: <Worm size={28} /> },
+      { name: 'PYTHON', icon: <Cpu size={28} /> },
       { name: 'NODE.JS', icon: <Server size={28} /> },
       { name: 'C# (.NET)', icon: <Hash size={28} /> },
       { name: 'EXPRESS.JS', icon: <ServerCog size={28} /> },
@@ -48,7 +48,7 @@ const SKILL_CATEGORIES = [
     title: 'DATABASE',
     skills: [
       { name: 'MYSQL', icon: <Database size={28} /> },
-      { name: 'POSTGRESQL', icon: <DatabaseBackup size={28} /> },
+      { name: 'POSTGRESQL', icon: <HardDrive size={28} /> },
       { name: 'MONGODB ATLAS', icon: <Leaf size={28} /> },
       { name: 'SUPABASE', icon: <Zap size={28} /> },
     ]
