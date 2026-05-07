@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import samLogoIcon from '../images/samlogoicon.png';
+import { RESUME_URL } from '../constants';
 
 const NAV_LINKS = [
   { name: 'Home', path: '/' },
@@ -61,9 +62,9 @@ export default function Header() {
               </NavLink>
             ))}
             <div className="w-px h-6 bg-surface-variant mx-2"></div>
-            <button className="label-caps bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-all active:scale-95 shadow-md hover:shadow-lg ml-2">
+            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="label-caps bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-all active:scale-95 shadow-md hover:shadow-lg ml-2">
               RESUME
-            </button>
+            </a>
           </nav>
 
           {/* Mobile Toggle */}
@@ -101,9 +102,9 @@ export default function Header() {
                     {link.name}
                   </NavLink>
                 ))}
-                <button className="label-caps mt-4 bg-primary text-white px-6 py-4 rounded-xl hover:bg-primary/90 transition-all shadow-md">
+                <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="label-caps text-center mt-4 bg-primary text-white px-6 py-4 rounded-xl hover:bg-primary/90 transition-all shadow-md block">
                   RESUME
-                </button>
+                </a>
               </div>
             </motion.nav>
           )}

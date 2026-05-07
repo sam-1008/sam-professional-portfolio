@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { PROJECTS } from '../constants';
+import { PROJECTS, RESUME_URL } from '../constants';
 import ProjectCard from '../components/ProjectCard';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
@@ -49,9 +49,9 @@ export default function Projects() {
             <Link to="/contact" className="bg-primary-container text-white px-10 py-4 label-caps transition-all hover:bg-primary active:scale-95 text-center">
               GET IN TOUCH
             </Link>
-            <button className="border border-primary-container text-primary-container px-10 py-4 label-caps transition-all hover:bg-primary-container hover:text-white active:scale-95">
+            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" className="border border-primary-container text-primary-container px-10 py-4 label-caps transition-all hover:bg-primary-container hover:text-white active:scale-95 text-center">
               VIEW RESUME
-            </button>
+            </a>
           </div>
         </div>
       </section>

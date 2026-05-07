@@ -6,6 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { Download, FileText, CheckCircle2, AlertCircle, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { RESUME_URL } from '../constants';
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -138,7 +139,7 @@ export default function Contact() {
                   </div>
                   <FileText className="text-primary-container group-hover:translate-y-1 transition-transform" size={36} />
                 </div>
-                <a href="#" className="inline-flex items-center gap-3 label-caps border-b-2 border-primary pb-2 text-primary hover:gap-5 transition-all">
+                <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" download className="inline-flex items-center gap-3 label-caps border-b-2 border-primary pb-2 text-primary hover:gap-5 transition-all">
                   DOWNLOAD RESUME <Download size={14} />
                 </a>
               </motion.div>
