@@ -3,10 +3,48 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import React, { useState } from 'react';
 import { Download, FileText } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    const formData = new FormData(event.currentTarget);
+    formData.append("access_key", "3d8178f5-ee2a-40f5-84c3-4df802f782ba");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      }).then((res) => res.json());
+
+      if (res.success) {
+        setSubmitStatus('success');
+        event.currentTarget.reset();
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    }
+    
+    setIsSubmitting(false);
+  };
+
   return (
     <div className="flex flex-col">
       {/* Title Section */}
@@ -36,11 +74,13 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               className="lg:col-span-7 bg-white p-12 md:p-16 shadow-[0_40px_80px_-20px_rgba(7,26,59,0.08)]"
             >
-              <form className="space-y-10">
+              <form onSubmit={onSubmit} className="space-y-10">
                 <div>
                   <label className="label-caps text-secondary block mb-3">NAME</label>
                   <input 
                     type="text" 
+                    name="name"
+                    required
                     placeholder="John Doe"
                     className="w-full bg-background border-none p-5 font-serif focus:ring-1 focus:ring-primary-container outline-none"
                   />
@@ -49,6 +89,8 @@ export default function Contact() {
                   <label className="label-caps text-secondary block mb-3">EMAIL ADDRESS</label>
                   <input 
                     type="email" 
+                    name="email"
+                    required
                     placeholder="john@example.com"
                     className="w-full bg-background border-none p-5 font-serif focus:ring-1 focus:ring-primary-container outline-none"
                   />
@@ -57,13 +99,26 @@ export default function Contact() {
                   <label className="label-caps text-secondary block mb-3">MESSAGE</label>
                   <textarea 
                     rows={6}
+                    name="message"
+                    required
                     placeholder="How can I help you?"
                     className="w-full bg-background border-none p-5 font-serif focus:ring-1 focus:ring-primary-container outline-none resize-none"
                   />
                 </div>
-                <button className="w-full bg-primary-container text-white label-caps py-6 tracking-[0.2em] hover:bg-primary transition-all active:scale-[0.99]">
-                  SEND MESSAGE
-                </button>
+                <div>
+                  <button 
+                    disabled={isSubmitting}
+                    className="w-full bg-primary-container text-white label-caps py-6 tracking-[0.2em] hover:bg-primary transition-all active:scale-[0.99] disabled:opacity-70 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
+                  </button>
+                  {submitStatus === 'success' && (
+                    <p className="text-green-600 text-sm mt-4 text-center font-bold">Message sent successfully! I will get back to you soon.</p>
+                  )}
+                  {submitStatus === 'error' && (
+                    <p className="text-red-500 text-sm mt-4 text-center font-bold">Something went wrong. Please try again later.</p>
+                  )}
+                </div>
               </form>
             </motion.div>
 
