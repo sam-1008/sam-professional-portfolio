@@ -3,21 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
-import { Download, FileText } from 'lucide-react';
-import { motion } from 'motion/react';
+import React, { useState, useEffect } from 'react';
+import { Download, FileText, CheckCircle2, AlertCircle, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState('Something went wrong. Please try again later.');
+  const [toast, setToast] = useState<{ show: boolean, type: 'success' | 'error', message: string }>({ show: false, type: 'success', message: '' });
+
+  useEffect(() => {
+    if (toast.show) {
+      const timer = setTimeout(() => setToast(prev => ({ ...prev, show: false })), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [toast.show]);
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
     
     setIsSubmitting(true);
-    setSubmitStatus('idle');
 
     const formData = new FormData(form);
     formData.append("access_key", "3d8178f5-ee2a-40f5-84c3-4df802f782ba");
@@ -36,15 +41,13 @@ export default function Contact() {
       }).then((res) => res.json());
 
       if (res.success) {
-        setSubmitStatus('success');
+        setToast({ show: true, type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
         form.reset();
       } else {
-        setSubmitStatus('error');
-        setErrorMessage(res.message || 'Something went wrong. Please try again later.');
+        setToast({ show: true, type: 'error', message: res.message || 'Something went wrong. Please try again later.' });
       }
     } catch (error) {
-      setSubmitStatus('error');
-      setErrorMessage(error instanceof Error ? error.message : 'Network error occurred.');
+      setToast({ show: true, type: 'error', message: error instanceof Error ? error.message : 'Network error occurred.' });
     }
     
     setIsSubmitting(false);
@@ -117,12 +120,6 @@ export default function Contact() {
                   >
                     {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                   </button>
-                  {submitStatus === 'success' && (
-                    <p className="text-green-600 text-sm mt-4 text-center font-bold">Message sent successfully! I will get back to you soon.</p>
-                  )}
-                  {submitStatus === 'error' && (
-                    <p className="text-red-500 text-sm mt-4 text-center font-bold">{errorMessage}</p>
-                  )}
                 </div>
               </form>
             </motion.div>
@@ -160,6 +157,31 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {toast.show && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+            className={`fixed bottom-8 right-8 z-50 flex items-center gap-4 px-6 py-4 rounded-xl shadow-2xl border backdrop-blur-md ${
+              toast.type === 'success' 
+                ? 'bg-green-50/90 border-green-200/50 text-green-800' 
+                : 'bg-red-50/90 border-red-200/50 text-red-800'
+            }`}
+          >
+            {toast.type === 'success' ? <CheckCircle2 size={24} className="text-green-600" /> : <AlertCircle size={24} className="text-red-600" />}
+            <p className="font-sans font-medium text-sm pr-4">{toast.message}</p>
+            <button 
+              onClick={() => setToast(prev => ({ ...prev, show: false }))}
+              className={`p-1 rounded-full hover:bg-black/5 transition-colors ${toast.type === 'success' ? 'text-green-600' : 'text-red-600'}`}
+            >
+              <X size={16} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
