@@ -21,10 +21,10 @@ export default function Projects() {
         >
           <p className="label-caps text-on-primary-container mb-4">SELECTED WORKS</p>
           <h1 className="text-5xl md:text-6xl font-bold text-primary mb-8 leading-tight font-sans">
-            Curated Digital Experiences.
+            Versatile Software Solutions.
           </h1>
           <p className="text-xl text-secondary max-w-2xl font-serif">
-            A showcase of strategic design and technical precision. Each project represents a commitment to clarity, functionality, and the "Quiet Authority" of well-crafted software.
+            A diverse collection of applications ranging from full-stack platforms and analytical dashboards to C# desktop systems and modern landing pages. Each project highlights a commitment to intuitive design, clean architecture, and practical problem-solving.
           </p>
         </motion.div>
       </section>
