@@ -90,7 +90,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     id: '2',
-    company: 'MARIEL WAREHOUSE PROJECT',
+    company: 'MARIEL WAREHOUSE CONSTRUCTION PROJECT',
     role: 'Warehouse Clerk / Timekeeper',
     period: 'January - December 2022',
     location: 'ONSITE / GUMACA, QUEZON',
