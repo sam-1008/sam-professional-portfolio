@@ -24,6 +24,7 @@ import ciscoCyberSecurityCert from './images/Cisco_IntrotoCyberSecurity_Certific
 import ciscoNetworkingCert from './images/Cisco_NetworkingBasics_Certificate.jpg';
 import ciscoDataScienceCert from './images/Cisco_IntrotoDataScience_Certificate.jpg';
 import openItCert from './images/OpenIT_Certificate.jpg';
+import policeOperationSystemImage from './images/police-operation-system.jpg';
 
 export const PROJECTS: Project[] = [
   {
@@ -70,6 +71,15 @@ export const PROJECTS: Project[] = [
     tags: ['LANDING PAGE'],
     imageUrl: maxmangoImage,
     links: { view: '#', github: 'https://github.com/sam-1008/MaxMangoGumaca' }
+  },
+  {
+    id: 'police',
+    title: 'Police Operation System',
+    description: 'A Windows-based Police Operations Management System built in C# .NET, featuring officer login, case management, charge tracking, and dashboard reporting with SQL database integration.',
+    category: 'DESKTOP APPLICATION',
+    tags: ['WINDOWS DESKTOP APPLICATION'],
+    imageUrl: policeOperationSystemImage,
+    links: { view: '#', github: 'https://github.com/sam-1008/PoliceOperationSystem' }
   }
 ];
 
