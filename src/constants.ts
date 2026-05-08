@@ -24,7 +24,7 @@ import ciscoCyberSecurityCert from './images/Cisco_IntrotoCyberSecurity_Certific
 import ciscoNetworkingCert from './images/Cisco_NetworkingBasics_Certificate.jpg';
 import ciscoDataScienceCert from './images/Cisco_IntrotoDataScience_Certificate.jpg';
 import openItCert from './images/OpenIT_Certificate.jpg';
-import policeOperationSystemImage from './images/police-operation-system.jpg';
+import policeOperationSystemImage from './images/police.png';
 
 export const PROJECTS: Project[] = [
   {
