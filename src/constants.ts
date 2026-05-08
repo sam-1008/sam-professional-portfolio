@@ -95,9 +95,9 @@ export const EXPERIENCES: Experience[] = [
     period: 'January - December 2022',
     location: 'ONSITE / GUMACA, QUEZON',
     description: [
-      'Managed daily warehouse operations including inventory tracking, shipment coordination, and quality assurance for incoming and outgoing materials.',
-      'Operated forklifts and managed pallet organization to ensure efficient storage and retrieval, contributing to a 15% faster order fulfillment rate.',
-      'Maintained accurate daily attendance and punctuality records for over 50 staff members, liaising with HR to resolve discrepancies and ensure payroll accuracy.'
+      'Managed and organized inventory records at construction field, applying data analysis and comprehension to ensure accurate tracking of stock levels, material flow, and consumable usage.',
+      'Monitored workers\' daily attendance and computed total working hours using problem-solving and attention to detail to avoid discrepancies.',
+      'Prepared and updated daily reports, demonstrating clear communication and data visualization skills when presenting information to supervisors.'
     ],
     tags: ['OPERATIONS', 'LOGISTICS', 'TIMEKEEPING']
   }
