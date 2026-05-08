@@ -181,7 +181,7 @@ export default function Home() {
           <div className="flex justify-between items-end mb-12">
             <div className="flex flex-col gap-2">
               <span className="label-caps text-secondary">SELECTED WORKS</span>
-              <h2 className="text-4xl font-bold font-sans">Curated Projects</h2>
+              <h2 className="text-4xl font-bold font-sans">Software Solutions</h2>
             </div>
             <Link to="/projects" className="label-caps text-primary border-b border-primary pb-1 hover:opacity-70 transition-all inline-flex items-center gap-2">
               SEE ALL WORK <ArrowRight size={14} />

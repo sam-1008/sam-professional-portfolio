@@ -40,7 +40,7 @@ export default function Experience() {
                 <span className="label-caps text-secondary text-[10px] tracking-widest">{job.location}</span>
               </div>
 
-              <div className="md:col-span-9 lg:col-span-10 relative pl-12 border-l-2 border-primary-container/20 group-last:border-l-0">
+              <div className="md:col-span-9 lg:col-span-10 relative pl-12 border-l-2 border-primary-container/20">
                 <div className="absolute left-[-7px] top-2 w-3 h-3 bg-primary-container rounded-full ring-4 ring-white" />
 
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-4 mb-6">

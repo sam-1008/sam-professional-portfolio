@@ -20,7 +20,7 @@ export default function Projects() {
           className="max-w-3xl"
         >
           <p className="label-caps text-on-primary-container mb-4">SELECTED WORKS</p>
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-8 leading-tight font-sans">
+          <h1 className="text-5xl md:text-6xl font-bold text-primary-container mb-8 leading-tight font-sans">
             Versatile Software Solutions.
           </h1>
           <p className="text-xl text-secondary max-w-2xl font-serif">

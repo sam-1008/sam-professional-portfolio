@@ -62,7 +62,7 @@ export default function Contact() {
           <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-6xl md:text-7xl font-bold text-primary mb-6 font-sans tracking-tight"
+            className="text-6xl md:text-7xl font-bold text-primary-container mb-6 font-sans tracking-tight"
           >
             Get in touch.
           </motion.h1>
