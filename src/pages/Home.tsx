@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import samFormalImage from '../images/sam_formal.jpg';
+import samFormalImage from '../images/sam-headshot-full.png';
 
 const SKILL_CATEGORIES = [
   {
