@@ -7,10 +7,30 @@ import { Project, Experience, Education, Certification, Badge, DigitalCertificat
 
 export const RESUME_URL = "https://drive.google.com/file/d/1P8rX0R01Ts9grJtmnyM2OUnSWdS0A-Hr/view?usp=sharing";
 import edulmsImage from './images/edulms.png';
+import edulms2 from './images/edulms2.png';
+import edulms3 from './images/edulms3.png';
+import edulms4 from './images/edulms4.png';
+import edulms5 from './images/edulms5.png';
 import fintrackImage from './images/fintrack.png';
+import fintrack2 from './images/fintrack2.png';
+import fintrack3 from './images/fintrack3.png';
+import fintrack4 from './images/fintrack4.png';
+import fintrack5 from './images/fintrack5.png';
 import fuelintelImage from './images/fuelintel.png';
+import fuelintel2 from './images/fuelintel2.png';
+import fuelintel3 from './images/fuelintel3.png';
+import fuelintel4 from './images/fuelintel4.png';
+import fuelintel5 from './images/fuelintel5.png';
 import MirayaImage from './images/miraya.png';
+import miraya2 from './images/miraya2.png';
+import miraya3 from './images/miraya3.png';
+import miraya4 from './images/miraya4.png';
+import miraya5 from './images/miraya5.png';
 import maxmangoImage from './images/maxmango.png';
+import maxmango2 from './images/maxmango2.png';
+import maxmango3 from './images/maxmango3.png';
+import maxmango4 from './images/maxmango4.png';
+import maxmango5 from './images/maxmango5.png';
 import dataAnalyticsBadge from './images/data-analytics-essentials-badge.png';
 import cybersecurityBadge from './images/introduction-to-cybersecurity-badge.png';
 import networkingBadge from './images/networking-basics-badge.png';
@@ -25,6 +45,10 @@ import ciscoNetworkingCert from './images/Cisco_NetworkingBasics_Certificate.jpg
 import ciscoDataScienceCert from './images/Cisco_IntrotoDataScience_Certificate.jpg';
 import openItCert from './images/OpenIT_Certificate.jpg';
 import policeOperationSystemImage from './images/police.png';
+import police2 from './images/police2.png';
+import police3 from './images/police3.png';
+import police4 from './images/police4.png';
+import police5 from './images/police5.png';
 
 export const PROJECTS: Project[] = [
   {
@@ -34,6 +58,7 @@ export const PROJECTS: Project[] = [
     category: 'EDUCATION',
     tags: ['FULL-STACK', 'WEB APPLICATION'],
     imageUrl: edulmsImage,
+    images: [edulmsImage, edulms2, edulms3, edulms4, edulms5],
     links: { view: 'https://shc-edulms.vercel.app/', github: 'https://github.com/sam-1008/SHC_EduLMS' }
   },
   {
@@ -43,6 +68,7 @@ export const PROJECTS: Project[] = [
     category: 'MOBILE',
     tags: ['INTUITIVE UI', 'MOBILE APP'],
     imageUrl: fintrackImage,
+    images: [fintrackImage, fintrack2, fintrack3, fintrack4, fintrack5],
     links: { view: '#', github: 'https://github.com/sam-1008/budget-tracker' }
   },
   {
@@ -52,6 +78,7 @@ export const PROJECTS: Project[] = [
     category: 'BACKEND',
     tags: ['ANALYTICAL DASHBOARD', 'WEB-BASED'],
     imageUrl: fuelintelImage,
+    images: [fuelintelImage, fuelintel2, fuelintel3, fuelintel4, fuelintel5],
     links: { view: '#', github: 'https://github.com/sam-1008/Fuel-Intel' }
   },
   {
@@ -61,6 +88,7 @@ export const PROJECTS: Project[] = [
     category: 'PROMOTIONAL WEBSITE',
     tags: ['LANDING PAGE'],
     imageUrl: MirayaImage,
+    images: [MirayaImage, miraya2, miraya3, miraya4, miraya5],
     links: { view: '#', github: 'https://github.com/sam-1008/Miraya' }
   },
   {
@@ -70,6 +98,7 @@ export const PROJECTS: Project[] = [
     category: 'PROMOTIONAL WEBSITE',
     tags: ['LANDING PAGE'],
     imageUrl: maxmangoImage,
+    images: [maxmangoImage, maxmango2, maxmango3, maxmango4, maxmango5],
     links: { view: '#', github: 'https://github.com/sam-1008/MaxMangoGumaca' }
   },
   {
@@ -79,6 +108,7 @@ export const PROJECTS: Project[] = [
     category: 'DESKTOP APPLICATION',
     tags: ['WINDOWS DESKTOP APPLICATION'],
     imageUrl: policeOperationSystemImage,
+    images: [policeOperationSystemImage, police2, police3, police4, police5],
     links: { view: '#', github: 'https://github.com/sam-1008/PoliceOperationSystem' }
   }
 ];

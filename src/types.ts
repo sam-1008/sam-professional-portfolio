@@ -10,6 +10,7 @@ export interface Project {
   category: string;
   tags: string[];
   imageUrl: string;
+  images?: string[];
   links?: {
     view?: string;
     github?: string;
