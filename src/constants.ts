@@ -5,7 +5,7 @@
 
 import { Project, Experience, Education, Certification, Badge, DigitalCertificate } from './types';
 
-export const RESUME_URL = "https://drive.google.com/file/d/1P8rX0R01Ts9grJtmnyM2OUnSWdS0A-Hr/view?usp=sharing";
+export const RESUME_URL = "https://drive.google.com/file/d/1M-nHVe5ju4msAHbE5mQrEw6WoYHIow0-/view?usp=sharing";
 import edulmsImage from './images/edulms.png';
 import edulms2 from './images/edulms2.png';
 import edulms3 from './images/edulms3.png';
